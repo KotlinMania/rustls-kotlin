@@ -252,7 +252,7 @@ have any comments or questions on the Code of Conduct.
 
 ```kotlin
 dependencies {
-    implementation("io.github.kotlinmania:rustls-kotlin:0.1.0-SNAPSHOT")
+    implementation("io.github.kotlinmania:rustls-kotlin:0.1.0")
 }
 ```
 
