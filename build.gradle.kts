@@ -57,7 +57,11 @@ kotlin {
         binaries.framework { baseName = "Rustls"; xcf.add(this) }
     }
     iosSimulatorArm64 {
-        binaries.framework { baseName = "Rustls"; xcf.add(this) }
+        binaries.framework {
+            baseName = "Rustls"
+            isStatic = true
+            xcf.add(this)
+        }
     }
     iosX64 {
         binaries.framework { baseName = "Rustls"; xcf.add(this) }
