@@ -5,27 +5,27 @@ import Rustls
 struct RustlsExportTests {
     @Test("Rustls swift module imports cleanly")
     func swiftModuleLoads() {
-        #expect(true)
+        #expect(Bool(true))
     }
 
     @Test("Rustls exported types instantiate cleanly")
     func exportedTypesInstantiate() {
-        let alert = AlertDescription.companion.CloseNotify
+        let alert = AlertDescription.Companion.shared.CloseNotify
         #expect(alert.value == 0)
 
-        let handshake = HandshakeType.companion.ClientHello
+        let handshake = HandshakeType.Companion.shared.ClientHello
         #expect(handshake.value == 1)
 
-        let contentType = ContentType.companion.Handshake
+        let contentType = ContentType.Companion.shared.Handshake
         #expect(contentType.value == 0x16)
 
-        let version = ProtocolVersion.companion.TLSv1_3
+        let version = ProtocolVersion.Companion.shared.TLSv1_3
         #expect(version.value == 0x0304)
 
-        let scheme = SignatureScheme.companion.ED25519
+        let scheme = SignatureScheme.Companion.shared.ED25519
         #expect(scheme.supportedInTls13() == true)
 
-        let payload = Payload.companion.empty()
-        #expect(payload.intoVec().isEmpty)
+        let payload = msgs.Payload.Companion.shared.empty()
+        #expect(payload.intoVec().size == 0)
     }
 }
