@@ -8,8 +8,8 @@ Based on AST analysis, here are the concrete next steps.
 - **Function parity:** 34/2008 matched (target 246) — 1.7%
 - **Class/type parity:** 27/496 matched (target 205) — 5.4%
 - **Combined symbol parity:** 61/2504 matched (target 451) — 2.4%
-- **Average inline-code cosine:** 0.37 (function body across 8 matched files)
-- **Average documentation cosine:** 0.64 (doc text across 8 matched files)
+- **Average inline-code cosine:** 0.33 (function body across 9 matched files)
+- **Average documentation cosine:** 0.60 (doc text across 9 matched files)
 - **Cheat-zeroed Files:** 3
 - **Critical Issues:** 8 files with <0.60 function similarity
 
@@ -120,7 +120,7 @@ Every matched file is listed below with function and type symbol parity.
 
 ### 8. lib
 
-- **Target:** `pki.PkiTypes [STUB] [PROVENANCE-FALLBACK]`
+- **Target:** `rustls.Lib [ZERO]`
 - **Similarity:** 0.00
 - **Dependents:** 0
 - **Priority Score:** 20210.0
@@ -128,9 +128,6 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing functions:** _none_
 - **Types:** 0/2 matched (target 32)
 - **Missing types:** `Arc`, `Weak`
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `src/lib.rs` vs expected `lib.rs`
-- **Proposed provenance header:** `// port-lint: source lib.rs` (current: `// port-lint: source src/lib.rs`)
-- **Lint issues:** 1
 
 ### 9. enums
 
