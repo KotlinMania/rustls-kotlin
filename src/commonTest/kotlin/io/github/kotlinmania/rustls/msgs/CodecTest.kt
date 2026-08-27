@@ -1,4 +1,4 @@
-// port-lint: tests rustls/src/msgs/codec.rs
+// port-lint: tests msgs/codec.rs
 package io.github.kotlinmania.rustls.msgs
 
 import io.github.kotlinmania.rustls.InvalidMessage
