@@ -1,4 +1,4 @@
-// port-lint: source msgs/alert.rs
+// port-lint: source rustls/src/msgs/alert.rs
 package io.github.kotlinmania.rustls.msgs
 
 import io.github.kotlinmania.rustls.AlertDescription

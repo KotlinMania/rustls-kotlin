@@ -1,4 +1,4 @@
-// port-lint: source msgs/base.rs
+// port-lint: source rustls/src/msgs/base.rs
 package io.github.kotlinmania.rustls.msgs
 
 /**
