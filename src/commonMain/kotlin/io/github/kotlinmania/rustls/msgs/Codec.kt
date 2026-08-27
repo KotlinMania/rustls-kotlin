@@ -177,9 +177,10 @@ object CodecU24 : Codec<U24> {
 
     override fun read(reader: Reader): U24 {
         val b = reader.take(3) ?: throw InvalidMessage.MissingData("u24")
-        val v = ((b[0].toInt() and 0xff) shl 16) or
-            ((b[1].toInt() and 0xff) shl 8) or
-            (b[2].toInt() and 0xff)
+        val v =
+            ((b[0].toInt() and 0xff) shl 16) or
+                ((b[1].toInt() and 0xff) shl 8) or
+                (b[2].toInt() and 0xff)
         return U24(v.toUInt())
     }
 }
@@ -195,10 +196,11 @@ object CodecU32 : Codec<UInt> {
 
     override fun read(reader: Reader): UInt {
         val b = reader.take(4) ?: throw InvalidMessage.MissingData("u32")
-        val v = ((b[0].toLong() and 0xff) shl 24) or
-            ((b[1].toLong() and 0xff) shl 16) or
-            ((b[2].toLong() and 0xff) shl 8) or
-            (b[3].toLong() and 0xff)
+        val v =
+            ((b[0].toLong() and 0xff) shl 24) or
+                ((b[1].toLong() and 0xff) shl 16) or
+                ((b[2].toLong() and 0xff) shl 8) or
+                (b[3].toLong() and 0xff)
         return v.toUInt()
     }
 }
@@ -223,10 +225,13 @@ object CodecU64 : Codec<ULong> {
 
 object Codecs {
     fun encodeU8(value: UByte, bytes: OutputBuffer) = CodecU8.encode(value, bytes)
+
     fun readU8(r: Reader): UByte = CodecU8.read(r)
 
     fun encodeU16(value: UShort, bytes: OutputBuffer) = CodecU16.encode(value, bytes)
+
     fun readU16(r: Reader): UShort = CodecU16.read(r)
+
     fun putU16(v: UShort, out: ByteArray, offset: Int = 0) {
         val intV = v.toInt()
         out[offset] = ((intV ushr 8) and 0xff).toByte()
@@ -234,13 +239,17 @@ object Codecs {
     }
 
     fun encodeU24(value: U24, bytes: OutputBuffer) = CodecU24.encode(value, bytes)
+
     fun readU24(r: Reader): U24 = CodecU24.read(r)
 
     fun encodeU32(value: UInt, bytes: OutputBuffer) = CodecU32.encode(value, bytes)
+
     fun readU32(r: Reader): UInt = CodecU32.read(r)
 
     fun encodeU64(value: ULong, bytes: OutputBuffer) = CodecU64.encode(value, bytes)
+
     fun readU64(r: Reader): ULong = CodecU64.read(r)
+
     fun putU64(v: ULong, bytes: ByteArray, offset: Int = 0) {
         val longV = v.toLong()
         for (i in 0..7) {
@@ -252,7 +261,9 @@ object Codecs {
 /**
  * 24-bit unsigned integer type representation.
  */
-data class U24(val value: UInt) {
+data class U24(
+    val value: UInt,
+) {
     init {
         require(value <= 0x00ffffffu) { "u24 value exceeds 24 bits: $value" }
     }
@@ -278,13 +289,20 @@ interface TlsListElement {
  * The length of the length prefix for a list.
  */
 sealed class ListLength {
-    data class NonZeroU8(val emptyError: InvalidMessage) : ListLength()
+    data class NonZeroU8(
+        val emptyError: InvalidMessage,
+    ) : ListLength()
 
     data object U16 : ListLength()
 
-    data class NonZeroU16(val emptyError: InvalidMessage) : ListLength()
+    data class NonZeroU16(
+        val emptyError: InvalidMessage,
+    ) : ListLength()
 
-    data class U24(val max: Int, val error: InvalidMessage) : ListLength()
+    data class U24(
+        val max: Int,
+        val error: InvalidMessage,
+    ) : ListLength()
 
     fun read(r: Reader): Int =
         when (this) {
