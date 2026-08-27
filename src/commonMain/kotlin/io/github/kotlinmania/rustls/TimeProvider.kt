@@ -1,4 +1,4 @@
-// port-lint: source rustls/src/time_provider.rs
+// port-lint: source time_provider.rs
 package io.github.kotlinmania.rustls
 
 import io.github.kotlinmania.rustls.pki.UnixTime
