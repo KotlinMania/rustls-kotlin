@@ -1,4 +1,4 @@
-// port-lint: tests benches/benchmarks.rs
+// port-lint: tests rustls/benches/benchmarks.rs
 package io.github.kotlinmania.rustls
 
 import kotlin.test.Test

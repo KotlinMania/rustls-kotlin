@@ -4,18 +4,18 @@ Based on AST analysis, here are the concrete next steps.
 
 ## Summary
 
-- **Files Present:** 10/107 (9.3%)
-- **Function parity:** 34/2008 matched (target 246) — 1.7%
-- **Class/type parity:** 27/496 matched (target 205) — 5.4%
-- **Combined symbol parity:** 61/2504 matched (target 451) — 2.4%
-- **Average inline-code cosine:** 0.33 (function body across 9 matched files)
-- **Average documentation cosine:** 0.60 (doc text across 9 matched files)
+- **Files Present:** 10/110 (9.1%)
+- **Function parity:** 34/2109 matched (target 246) — 1.6%
+- **Class/type parity:** 27/514 matched (target 205) — 5.3%
+- **Combined symbol parity:** 61/2623 matched (target 451) — 2.3%
+- **Average inline-code cosine:** 0.37 (function body across 8 matched files)
+- **Average documentation cosine:** 0.64 (doc text across 8 matched files)
 - **Cheat-zeroed Files:** 3
 - **Critical Issues:** 8 files with <0.60 function similarity
 
 ## Priority 1: Fix Incomplete High-Dependency Files
 
-### 1. error
+### 1. rustls.error
 - **Similarity:** 0.00 (needs 85% improvement)
 - **Dependencies:** 27
 - **Priority Score:** 27122210.0
@@ -37,7 +37,7 @@ No missing high-value files detected.
 
 Every matched file is listed below with function and type symbol parity.
 
-### 1. error
+### 1. rustls.error
 
 - **Target:** `rustls.Error`
 - **Similarity:** 0.00
@@ -72,7 +72,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 3/3 matched
 - **Missing types:** _none_
 
-### 4. time_provider
+### 4. rustls.time_provider
 
 - **Target:** `rustls.TimeProvider`
 - **Similarity:** 0.84
@@ -118,9 +118,9 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing types:** _none_
 - **Tests:** 1/5 matched
 
-### 8. lib
+### 8. rustls.lib
 
-- **Target:** `rustls.Lib [ZERO]`
+- **Target:** `rustls.Lib [STUB]`
 - **Similarity:** 0.00
 - **Dependents:** 0
 - **Priority Score:** 20210.0
@@ -129,7 +129,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/2 matched (target 32)
 - **Missing types:** `Arc`, `Weak`
 
-### 9. enums
+### 9. rustls.enums
 
 - **Target:** `rustls.Enums [ZERO]`
 - **Similarity:** 0.00
@@ -160,26 +160,4 @@ For each file to be considered "complete":
 - All tests ported
 - Documentation ported
 - port-lint header present
-
-## Reexport / Wiring Modules
-
-These files match `reexport_modules` patterns in `.ast_distance_config.json`. They are filtered out of
-normal priority and missing-file ladders because they are wiring
-modules, not direct logic ports. Consult them for call-site routing;
-do not treat them as the next implementation target by default.
-
-### Missing
-
-| Source | Expected target | Deps | Source path | Expected path |
-|--------|-----------------|------|-------------|---------------|
-| `aws_lc_rs.mod` | `crypto.awslcrs.Mod` | 0 | `crypto/aws_lc_rs/mod.rs` | `crypto/awslcrs/Mod.kt` |
-| `pq.mod` | `crypto.awslcrs.pq.Mod` | 0 | `crypto/aws_lc_rs/pq/mod.rs` | `crypto/awslcrs/pq/Mod.kt` |
-| `ring.mod` | `crypto.ring.Mod` | 0 | `crypto/ring/mod.rs` | `crypto/ring/Mod.kt` |
-| `manual.mod` | `manual.Mod` | 0 | `manual/mod.rs` | `manual/Mod.kt` |
-| `deframer.mod` | `msgs.deframer.Mod` | 0 | `msgs/deframer/mod.rs` | `msgs/deframer/Mod.kt` |
-| `message.mod` | `msgs.message.Mod` | 0 | `msgs/message/mod.rs` | `msgs/message/Mod.kt` |
-| `msgs.mod` | `msgs.Mod` | 0 | `msgs/mod.rs` | `msgs/Mod.kt` |
-| `tls12.mod` | `tls12.Mod` | 0 | `tls12/mod.rs` | `tls12/Mod.kt` |
-| `tls13.mod` | `tls13.Mod` | 0 | `tls13/mod.rs` | `tls13/Mod.kt` |
-| `webpki.mod` | `webpki.Mod` | 0 | `webpki/mod.rs` | `webpki/Mod.kt` |
 
