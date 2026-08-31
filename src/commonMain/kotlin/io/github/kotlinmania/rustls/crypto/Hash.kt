@@ -1,4 +1,4 @@
-// port-lint: source crypto/hash.rs
+// port-lint: source rustls/src/crypto/hash.rs
 package io.github.kotlinmania.rustls.crypto
 
 import io.github.kotlinmania.rustls.msgs.HashAlgorithm
