@@ -4,18 +4,18 @@ Based on AST analysis, here are the concrete next steps.
 
 ## Summary
 
-- **Files Present:** 10/107 (9.3%)
-- **Function parity:** 34/2095 matched (target 246) — 1.6%
-- **Class/type parity:** 27/512 matched (target 205) — 5.3%
-- **Combined symbol parity:** 61/2607 matched (target 451) — 2.3%
-- **Average inline-code cosine:** 0.33 (function body across 9 matched files)
-- **Average documentation cosine:** 0.60 (doc text across 9 matched files)
+- **Files Present:** 10/110 (9.1%)
+- **Function parity:** 34/2109 matched (target 246) — 1.6%
+- **Class/type parity:** 27/514 matched (target 205) — 5.3%
+- **Combined symbol parity:** 61/2623 matched (target 451) — 2.3%
+- **Average inline-code cosine:** 0.37 (function body across 8 matched files)
+- **Average documentation cosine:** 0.64 (doc text across 8 matched files)
 - **Cheat-zeroed Files:** 3
 - **Critical Issues:** 8 files with <0.60 function similarity
 
 ## Priority 1: Fix Incomplete High-Dependency Files
 
-### 1. error
+### 1. rustls.error
 - **Similarity:** 0.00 (needs 85% improvement)
 - **Dependencies:** 27
 - **Priority Score:** 27122210.0
@@ -37,7 +37,7 @@ No missing high-value files detected.
 
 Every matched file is listed below with function and type symbol parity.
 
-### 1. error
+### 1. rustls.error
 
 - **Target:** `rustls.Error`
 - **Similarity:** 0.00
@@ -72,7 +72,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 3/3 matched
 - **Missing types:** _none_
 
-### 4. time_provider
+### 4. rustls.time_provider
 
 - **Target:** `rustls.TimeProvider`
 - **Similarity:** 0.84
@@ -118,9 +118,9 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing types:** _none_
 - **Tests:** 1/5 matched
 
-### 8. lib
+### 8. rustls.lib
 
-- **Target:** `rustls.Lib [ZERO]`
+- **Target:** `rustls.Lib [STUB]`
 - **Similarity:** 0.00
 - **Dependents:** 0
 - **Priority Score:** 20210.0
@@ -129,7 +129,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/2 matched (target 32)
 - **Missing types:** `Arc`, `Weak`
 
-### 9. enums
+### 9. rustls.enums
 
 - **Target:** `rustls.Enums [ZERO]`
 - **Similarity:** 0.00

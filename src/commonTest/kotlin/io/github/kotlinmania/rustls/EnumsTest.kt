@@ -1,4 +1,4 @@
-// port-lint: tests enums.rs
+// port-lint: tests rustls/src/enums.rs
 package io.github.kotlinmania.rustls
 
 import io.github.kotlinmania.rustls.msgs.Reader

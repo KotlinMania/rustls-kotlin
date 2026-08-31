@@ -1,4 +1,4 @@
-// port-lint: source enums.rs
+// port-lint: source rustls/src/enums.rs
 package io.github.kotlinmania.rustls
 
 import io.github.kotlinmania.rustls.msgs.Codec

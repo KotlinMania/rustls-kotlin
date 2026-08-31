@@ -1,4 +1,4 @@
-// port-lint: tests error.rs
+// port-lint: tests rustls/src/error.rs
 package io.github.kotlinmania.rustls
 
 import io.github.kotlinmania.rustls.pki.ServerName
