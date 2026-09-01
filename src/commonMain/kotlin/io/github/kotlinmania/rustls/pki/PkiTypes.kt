@@ -1,4 +1,4 @@
-// port-lint: source rustls/src/lib.rs
+// port-lint: source lib.rs
 package io.github.kotlinmania.rustls.pki
 
 import kotlin.time.Duration

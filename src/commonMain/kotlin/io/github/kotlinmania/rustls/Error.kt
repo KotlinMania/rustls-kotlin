@@ -1,4 +1,4 @@
-// port-lint: source rustls/src/error.rs
+// port-lint: source error.rs
 package io.github.kotlinmania.rustls
 
 import io.github.kotlinmania.rustls.crypto.KeyExchangeAlgorithm
