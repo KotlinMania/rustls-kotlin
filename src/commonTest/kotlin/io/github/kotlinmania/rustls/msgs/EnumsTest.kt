@@ -1,4 +1,4 @@
-// port-lint: tests rustls/src/msgs/enums.rs
+// port-lint: tests msgs/enums.rs
 package io.github.kotlinmania.rustls.msgs
 
 import io.github.kotlinmania.rustls.crypto.KeyExchangeAlgorithm

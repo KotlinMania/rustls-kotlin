@@ -1,4 +1,4 @@
-// port-lint: source rustls/src/crypto/mod.rs
+// port-lint: source crypto/mod.rs
 package io.github.kotlinmania.rustls.crypto
 
 /**
