@@ -1,26 +1,9 @@
 # port-lint Proposed Changes
 
 **Generated:** 2026-08-31
-**Source:** tmp/rustls/src
+**Source:** tmp
 **Target:** src/commonMain/kotlin/io/github/kotlinmania/rustls
 
 These are review proposals only. They are emitted when a Rust -> Kotlin pair matches only after fallback normalization, so the existing `port-lint` header is not an exact provenance match.
 
-| Target file | Current header | Proposed header | Source path | Reason |
-|-------------|----------------|-----------------|-------------|--------|
-| `src/commonMain/kotlin/io/github/kotlinmania/rustls/Error.kt` | `// port-lint: source rustls/src/error.rs` | `// port-lint: source error.rs` | `error.rs` | `port-lint provenance header matched only after fallback normalization: 'rustls/src/error.rs' vs expected 'error.rs'` |
-| `src/commonTest/kotlin/io/github/kotlinmania/rustls/ErrorTest.kt` | `// port-lint: tests rustls/src/error.rs` | `// port-lint: tests error.rs` | `error.rs` | `port-lint provenance header matched only after fallback normalization: 'tests:rustls/src/error.rs' vs expected 'error.rs'` |
-| `src/commonMain/kotlin/io/github/kotlinmania/rustls/msgs/Codec.kt` | `// port-lint: source rustls/src/msgs/codec.rs` | `// port-lint: source msgs/codec.rs` | `msgs/codec.rs` | `port-lint provenance header matched only after fallback normalization: 'rustls/src/msgs/codec.rs' vs expected 'msgs/codec.rs'` |
-| `src/commonTest/kotlin/io/github/kotlinmania/rustls/msgs/CodecTest.kt` | `// port-lint: tests rustls/src/msgs/codec.rs` | `// port-lint: tests msgs/codec.rs` | `msgs/codec.rs` | `port-lint provenance header matched only after fallback normalization: 'tests:rustls/src/msgs/codec.rs' vs expected 'msgs/codec.rs'` |
-| `src/commonMain/kotlin/io/github/kotlinmania/rustls/crypto/Hash.kt` | `// port-lint: source rustls/src/crypto/hash.rs` | `// port-lint: source crypto/hash.rs` | `crypto/hash.rs` | `port-lint provenance header matched only after fallback normalization: 'rustls/src/crypto/hash.rs' vs expected 'crypto/hash.rs'` |
-| `src/commonMain/kotlin/io/github/kotlinmania/rustls/TimeProvider.kt` | `// port-lint: source rustls/src/time_provider.rs` | `// port-lint: source time_provider.rs` | `time_provider.rs` | `port-lint provenance header matched only after fallback normalization: 'rustls/src/time_provider.rs' vs expected 'time_provider.rs'` |
-| `src/commonMain/kotlin/io/github/kotlinmania/rustls/crypto/Types.kt` | `// port-lint: source rustls/src/crypto/mod.rs` | `// port-lint: source crypto/mod.rs` | `crypto/mod.rs` | `port-lint provenance header matched only after fallback normalization: 'rustls/src/crypto/mod.rs' vs expected 'crypto/mod.rs'` |
-| `src/commonMain/kotlin/io/github/kotlinmania/rustls/msgs/Base.kt` | `// port-lint: source rustls/src/msgs/base.rs` | `// port-lint: source msgs/base.rs` | `msgs/base.rs` | `port-lint provenance header matched only after fallback normalization: 'rustls/src/msgs/base.rs' vs expected 'msgs/base.rs'` |
-| `src/commonTest/kotlin/io/github/kotlinmania/rustls/msgs/BaseAndAlertTest.kt` | `// port-lint: tests rustls/src/msgs/base.rs` | `// port-lint: tests msgs/base.rs` | `msgs/base.rs` | `port-lint provenance header matched only after fallback normalization: 'tests:rustls/src/msgs/base.rs' vs expected 'msgs/base.rs'` |
-| `src/commonMain/kotlin/io/github/kotlinmania/rustls/msgs/Enums.kt` | `// port-lint: source rustls/src/msgs/enums.rs` | `// port-lint: source msgs/enums.rs` | `msgs/enums.rs` | `port-lint provenance header matched only after fallback normalization: 'rustls/src/msgs/enums.rs' vs expected 'msgs/enums.rs'` |
-| `src/commonTest/kotlin/io/github/kotlinmania/rustls/msgs/EnumsTest.kt` | `// port-lint: tests rustls/src/msgs/enums.rs` | `// port-lint: tests msgs/enums.rs` | `msgs/enums.rs` | `port-lint provenance header matched only after fallback normalization: 'tests:rustls/src/msgs/enums.rs' vs expected 'msgs/enums.rs'` |
-| `src/commonMain/kotlin/io/github/kotlinmania/rustls/Lib.kt` | `// port-lint: source rustls/src/lib.rs` | `// port-lint: source lib.rs` | `lib.rs` | `port-lint provenance header matched only after fallback normalization: 'rustls/src/lib.rs' vs expected 'lib.rs'` |
-| `src/commonMain/kotlin/io/github/kotlinmania/rustls/pki/PkiTypes.kt` | `// port-lint: source rustls/src/lib.rs` | `// port-lint: source lib.rs` | `lib.rs` | `port-lint provenance header matched only after fallback normalization: 'rustls/src/lib.rs' vs expected 'lib.rs'` |
-| `src/commonMain/kotlin/io/github/kotlinmania/rustls/Enums.kt` | `// port-lint: source rustls/src/enums.rs` | `// port-lint: source enums.rs` | `enums.rs` | `port-lint provenance header matched only after fallback normalization: 'rustls/src/enums.rs' vs expected 'enums.rs'` |
-| `src/commonTest/kotlin/io/github/kotlinmania/rustls/EnumsTest.kt` | `// port-lint: tests rustls/src/enums.rs` | `// port-lint: tests enums.rs` | `enums.rs` | `port-lint provenance header matched only after fallback normalization: 'tests:rustls/src/enums.rs' vs expected 'enums.rs'` |
-| `src/commonMain/kotlin/io/github/kotlinmania/rustls/msgs/Alert.kt` | `// port-lint: source rustls/src/msgs/alert.rs` | `// port-lint: source msgs/alert.rs` | `msgs/alert.rs` | `port-lint provenance header matched only after fallback normalization: 'rustls/src/msgs/alert.rs' vs expected 'msgs/alert.rs'` |
+_No fallback provenance matches detected._

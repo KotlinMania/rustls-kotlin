@@ -4,18 +4,18 @@ Based on AST analysis, here are the concrete next steps.
 
 ## Summary
 
-- **Files Present:** 10/107 (9.3%)
-- **Function parity:** 34/2095 matched (target 246) — 1.6%
-- **Class/type parity:** 27/512 matched (target 205) — 5.3%
-- **Combined symbol parity:** 61/2607 matched (target 451) — 2.3%
+- **Files Present:** 10/110 (9.1%)
+- **Function parity:** 34/2039 matched (target 179) — 1.7%
+- **Class/type parity:** 27/498 matched (target 173) — 5.4%
+- **Combined symbol parity:** 61/2537 matched (target 352) — 2.4%
 - **Average inline-code cosine:** 0.37 (function body across 8 matched files)
 - **Average documentation cosine:** 0.64 (doc text across 8 matched files)
-- **Cheat-zeroed Files:** 3
+- **Cheat-zeroed Files:** 2
 - **Critical Issues:** 8 files with <0.60 function similarity
 
 ## Priority 1: Fix Incomplete High-Dependency Files
 
-### 1. error
+### 1. rustls.error
 - **Similarity:** 0.00 (needs 85% improvement)
 - **Dependencies:** 27
 - **Priority Score:** 27122210.0
@@ -37,9 +37,9 @@ No missing high-value files detected.
 
 Every matched file is listed below with function and type symbol parity.
 
-### 1. error
+### 1. rustls.error
 
-- **Target:** `rustls.Error [PROVENANCE-FALLBACK]`
+- **Target:** `rustls.Error`
 - **Similarity:** 0.00
 - **Dependents:** 27
 - **Priority Score:** 27122210.0
@@ -48,15 +48,10 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 10/10 matched (target 112)
 - **Missing types:** _none_
 - **Tests:** 0/6 matched
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `rustls/src/error.rs` vs expected `error.rs`
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:rustls/src/error.rs` vs expected `error.rs`
-- **Proposed provenance header:** `// port-lint: source error.rs` (current: `// port-lint: source rustls/src/error.rs`)
-- **Proposed provenance header:** `// port-lint: tests error.rs` (current: `// port-lint: tests rustls/src/error.rs`)
-- **Lint issues:** 2
 
 ### 2. msgs.codec
 
-- **Target:** `msgs.Codec [PROVENANCE-FALLBACK]`
+- **Target:** `msgs.Codec`
 - **Similarity:** 0.42
 - **Dependents:** 7
 - **Priority Score:** 7062706.0
@@ -65,15 +60,10 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 6/8 matched (target 17)
 - **Missing types:** `TlsListIter`, `Item`
 - **Tests:** 1/1 matched
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `rustls/src/msgs/codec.rs` vs expected `msgs/codec.rs`
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:rustls/src/msgs/codec.rs` vs expected `msgs/codec.rs`
-- **Proposed provenance header:** `// port-lint: source msgs/codec.rs` (current: `// port-lint: source rustls/src/msgs/codec.rs`)
-- **Proposed provenance header:** `// port-lint: tests msgs/codec.rs` (current: `// port-lint: tests rustls/src/msgs/codec.rs`)
-- **Lint issues:** 2
 
 ### 3. crypto.hash
 
-- **Target:** `crypto.Hash [PROVENANCE-FALLBACK]`
+- **Target:** `crypto.Hash`
 - **Similarity:** 0.61
 - **Dependents:** 6
 - **Priority Score:** 6000604.0
@@ -81,13 +71,10 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing functions:** _none_
 - **Types:** 3/3 matched
 - **Missing types:** _none_
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `rustls/src/crypto/hash.rs` vs expected `crypto/hash.rs`
-- **Proposed provenance header:** `// port-lint: source crypto/hash.rs` (current: `// port-lint: source rustls/src/crypto/hash.rs`)
-- **Lint issues:** 1
 
-### 4. time_provider
+### 4. rustls.time_provider
 
-- **Target:** `rustls.TimeProvider [PROVENANCE-FALLBACK]`
+- **Target:** `rustls.TimeProvider`
 - **Similarity:** 0.84
 - **Dependents:** 4
 - **Priority Score:** 4000301.5
@@ -95,13 +82,10 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing functions:** _none_
 - **Types:** 2/2 matched
 - **Missing types:** _none_
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `rustls/src/time_provider.rs` vs expected `time_provider.rs`
-- **Proposed provenance header:** `// port-lint: source time_provider.rs` (current: `// port-lint: source rustls/src/time_provider.rs`)
-- **Lint issues:** 1
 
 ### 5. crypto.mod
 
-- **Target:** `crypto.Types [STUB] [PROVENANCE-FALLBACK]`
+- **Target:** `crypto.Types [STUB]`
 - **Similarity:** 0.00
 - **Dependents:** 0
 - **Priority Score:** 232410.0
@@ -110,13 +94,10 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 1/7 matched (target 3)
 - **Missing types:** `CryptoProvider`, `KeyProvider`, `SupportedKxGroup`, `ActiveKeyExchange`, `CompletedKeyExchange`, `SharedSecret`
 - **Tests:** 0/1 matched
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `rustls/src/crypto/mod.rs` vs expected `crypto/mod.rs`
-- **Proposed provenance header:** `// port-lint: source crypto/mod.rs` (current: `// port-lint: source rustls/src/crypto/mod.rs`)
-- **Lint issues:** 1
 
 ### 6. msgs.base
 
-- **Target:** `msgs.Base [PROVENANCE-FALLBACK]`
+- **Target:** `msgs.Base`
 - **Similarity:** 0.25
 - **Dependents:** 0
 - **Priority Score:** 91807.5
@@ -124,15 +105,10 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing functions:** `into_owned`, `new`, `fmt`, `encode_slice`, `zeroize`, `hex`
 - **Types:** 4/7 matched (target 5)
 - **Missing types:** `Cardinality`, `MaybeEmpty`, `NonEmpty`
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `rustls/src/msgs/base.rs` vs expected `msgs/base.rs`
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:rustls/src/msgs/base.rs` vs expected `msgs/base.rs`
-- **Proposed provenance header:** `// port-lint: source msgs/base.rs` (current: `// port-lint: source rustls/src/msgs/base.rs`)
-- **Proposed provenance header:** `// port-lint: tests msgs/base.rs` (current: `// port-lint: tests rustls/src/msgs/base.rs`)
-- **Lint issues:** 2
 
 ### 7. msgs.enums
 
-- **Target:** `msgs.Enums [PROVENANCE-FALLBACK]`
+- **Target:** `msgs.Enums`
 - **Similarity:** 0.27
 - **Dependents:** 0
 - **Priority Score:** 50907.3
@@ -141,31 +117,10 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/0 matched (target 19)
 - **Missing types:** _none_
 - **Tests:** 1/5 matched
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `rustls/src/msgs/enums.rs` vs expected `msgs/enums.rs`
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:rustls/src/msgs/enums.rs` vs expected `msgs/enums.rs`
-- **Proposed provenance header:** `// port-lint: source msgs/enums.rs` (current: `// port-lint: source rustls/src/msgs/enums.rs`)
-- **Proposed provenance header:** `// port-lint: tests msgs/enums.rs` (current: `// port-lint: tests rustls/src/msgs/enums.rs`)
-- **Lint issues:** 2
 
-### 8. lib
+### 8. rustls.enums
 
-- **Target:** `rustls.Lib [STUB] [PROVENANCE-FALLBACK]`
-- **Similarity:** 0.00
-- **Dependents:** 0
-- **Priority Score:** 20210.0
-- **Functions:** 0/0 matched (target 67)
-- **Missing functions:** _none_
-- **Types:** 0/2 matched (target 32)
-- **Missing types:** `Arc`, `Weak`
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `rustls/src/lib.rs` vs expected `lib.rs`
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `rustls/src/lib.rs` vs expected `lib.rs`
-- **Proposed provenance header:** `// port-lint: source lib.rs` (current: `// port-lint: source rustls/src/lib.rs`)
-- **Proposed provenance header:** `// port-lint: source lib.rs` (current: `// port-lint: source rustls/src/lib.rs`)
-- **Lint issues:** 2
-
-### 9. enums
-
-- **Target:** `rustls.Enums [ZERO] [PROVENANCE-FALLBACK]`
+- **Target:** `rustls.Enums [ZERO]`
 - **Similarity:** 0.00
 - **Dependents:** 0
 - **Priority Score:** 410.0
@@ -174,15 +129,10 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/0 matched (target 11)
 - **Missing types:** _none_
 - **Tests:** 2/2 matched
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `rustls/src/enums.rs` vs expected `enums.rs`
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:rustls/src/enums.rs` vs expected `enums.rs`
-- **Proposed provenance header:** `// port-lint: source enums.rs` (current: `// port-lint: source rustls/src/enums.rs`)
-- **Proposed provenance header:** `// port-lint: tests enums.rs` (current: `// port-lint: tests rustls/src/enums.rs`)
-- **Lint issues:** 2
 
-### 10. msgs.alert
+### 9. msgs.alert
 
-- **Target:** `msgs.Alert [PROVENANCE-FALLBACK]`
+- **Target:** `msgs.Alert`
 - **Similarity:** 0.57
 - **Dependents:** 0
 - **Priority Score:** 304.3
@@ -190,9 +140,6 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing functions:** _none_
 - **Types:** 1/1 matched
 - **Missing types:** _none_
-- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `rustls/src/msgs/alert.rs` vs expected `msgs/alert.rs`
-- **Proposed provenance header:** `// port-lint: source msgs/alert.rs` (current: `// port-lint: source rustls/src/msgs/alert.rs`)
-- **Lint issues:** 1
 
 ## Success Criteria
 
@@ -202,4 +149,29 @@ For each file to be considered "complete":
 - All tests ported
 - Documentation ported
 - port-lint header present
+
+## Reexport / Wiring Modules
+
+These files match `reexport_modules` patterns in `.ast_distance_config.json`. They are filtered out of
+normal priority and missing-file ladders because they are wiring
+modules, not direct logic ports. Consult them for call-site routing;
+do not treat them as the next implementation target by default.
+
+### Matched
+
+| Source | Target | Path |
+|--------|--------|------|
+| `rustls.lib` | `rustls.Lib` | `rustls/src/lib` |
+
+### Missing
+
+| Source | Expected target | Deps | Source path | Expected path |
+|--------|-----------------|------|-------------|---------------|
+| `manual.mod` | `rustls.src.manual.Mod` | 0 | `rustls/src/manual/mod.rs` | `rustls/src/manual/Mod.kt` |
+| `deframer.mod` | `rustls.src.msgs.deframer.Mod` | 0 | `rustls/src/msgs/deframer/mod.rs` | `rustls/src/msgs/deframer/Mod.kt` |
+| `message.mod` | `rustls.src.msgs.message.Mod` | 0 | `rustls/src/msgs/message/mod.rs` | `rustls/src/msgs/message/Mod.kt` |
+| `msgs.mod` | `rustls.src.msgs.Mod` | 0 | `rustls/src/msgs/mod.rs` | `rustls/src/msgs/Mod.kt` |
+| `tls12.mod` | `rustls.src.tls12.Mod` | 0 | `rustls/src/tls12/mod.rs` | `rustls/src/tls12/Mod.kt` |
+| `tls13.mod` | `rustls.src.tls13.Mod` | 0 | `rustls/src/tls13/mod.rs` | `rustls/src/tls13/Mod.kt` |
+| `webpki.mod` | `rustls.src.webpki.Mod` | 0 | `rustls/src/webpki/mod.rs` | `rustls/src/webpki/Mod.kt` |
 
