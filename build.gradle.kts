@@ -339,6 +339,10 @@ tasks
         dependsOn(ensureAndroidSdk)
     }
 
+tasks.matching { it.name == "checkAndroidDeviceTestAarMetadata" }.configureEach {
+    dependsOn(tasks.matching { it.name == "writeAndroidMainAarMetadata" })
+}
+
 // Gap #9b: KGP-generated bridge boilerplate and KotlinCoroutineSupport runtime
 // produce warnings (unchecked casts, unused expressions, opt-in requirements)
 // that cannot be fixed in source — they are regenerated every build.

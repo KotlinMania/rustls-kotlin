@@ -360,54 +360,85 @@ private fun validate(input: ByteArray): Boolean {
             when (state) {
                 DnsValidationState.Start, DnsValidationState.Next, DnsValidationState.NextAfterNumericOnly -> {
                     when (ch) {
-                        '.'.code -> return false
+                        '.'.code -> {
+                            return false
+                        }
+
                         in '0'.code..'9'.code -> {
                             len = 1
                             DnsValidationState.NumericOnly
                         }
+
                         in 'a'.code..'z'.code, in 'A'.code..'Z'.code, '_'.code -> {
                             len = 1
                             DnsValidationState.Subsequent
                         }
-                        else -> return false
+
+                        else -> {
+                            return false
+                        }
                     }
                 }
+
                 DnsValidationState.Subsequent -> {
                     when (ch) {
-                        '.'.code -> DnsValidationState.Next
+                        '.'.code -> {
+                            DnsValidationState.Next
+                        }
+
                         '-'.code -> {
                             len += 1
                             DnsValidationState.Hyphen
                         }
+
                         in 'a'.code..'z'.code, in 'A'.code..'Z'.code, '_'.code, in '0'.code..'9'.code -> {
                             len += 1
                             DnsValidationState.Subsequent
                         }
-                        else -> return false
+
+                        else -> {
+                            return false
+                        }
                     }
                 }
+
                 DnsValidationState.NumericOnly -> {
                     when (ch) {
-                        '.'.code -> DnsValidationState.NextAfterNumericOnly
+                        '.'.code -> {
+                            DnsValidationState.NextAfterNumericOnly
+                        }
+
                         '-'.code -> {
                             len += 1
                             DnsValidationState.Hyphen
                         }
+
                         in 'a'.code..'z'.code, in 'A'.code..'Z'.code, '_'.code, in '0'.code..'9'.code -> {
                             len += 1
                             DnsValidationState.Subsequent
                         }
-                        else -> return false
+
+                        else -> {
+                            return false
+                        }
                     }
                 }
+
                 DnsValidationState.Hyphen -> {
                     when {
-                        ch == '.'.code -> return false
-                        len >= MAX_LABEL_LENGTH -> return false
+                        ch == '.'.code -> {
+                            return false
+                        }
+
+                        len >= MAX_LABEL_LENGTH -> {
+                            return false
+                        }
+
                         '-'.code == ch -> {
                             len += 1
                             DnsValidationState.Hyphen
                         }
+
                         (
                             ch in 'a'.code..'z'.code ||
                                 ch in 'A'.code..'Z'.code ||
@@ -417,7 +448,10 @@ private fun validate(input: ByteArray): Boolean {
                             len += 1
                             DnsValidationState.Subsequent
                         }
-                        else -> return false
+
+                        else -> {
+                            return false
+                        }
                     }
                 }
             }
@@ -426,6 +460,7 @@ private fun validate(input: ByteArray): Boolean {
             DnsValidationState.Subsequent, DnsValidationState.NumericOnly, DnsValidationState.Hyphen -> {
                 if (len > MAX_LABEL_LENGTH) return false
             }
+
             else -> {}
         }
 
@@ -433,10 +468,17 @@ private fun validate(input: ByteArray): Boolean {
     }
 
     return when (state) {
-        DnsValidationState.Start, DnsValidationState.Hyphen,
-        DnsValidationState.NumericOnly, DnsValidationState.NextAfterNumericOnly,
-        -> false
-        else -> true
+        DnsValidationState.Start,
+        DnsValidationState.Hyphen,
+        DnsValidationState.NumericOnly,
+        DnsValidationState.NextAfterNumericOnly,
+        -> {
+            false
+        }
+
+        else -> {
+            true
+        }
     }
 }
 

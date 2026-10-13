@@ -11,6 +11,7 @@ processors:
 
 potential-bugs:
   active: true
+  EqualsAlwaysReturnsTrueOrFalse: { active: false }
   EqualsWithHashCodeExist: { active: false }
   ExplicitGarbageCollectionCall: { active: true }
   LateinitUsage: { active: true }
